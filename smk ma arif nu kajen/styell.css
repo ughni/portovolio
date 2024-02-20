@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100%;
+}
+body {
+  background: #ddd;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 50px;
+}
+
+.container {
+  display: grid;
+  gap: 10px;
+}
+
+/* header */
+header {
+  display: grid;
+  grid-template-areas: 
+  'hero hero reature-1' 'hero hero reature-2';
+}
+
+.hero {
+  grid-area: hero;
+  min-height: 300px;
+  background-image: url(./gambar/WhatsApp\ Image\ 2023-10-04\ at\ 20.04.56\ \(1\).jpeg);
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+}
+
+.hero > * {
+  display: none;
+  color: rgb(255, 246, 246);
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.reatures {
+  background: black;
+  color: #fff;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.reature-1 {
+  grid-area: reature-1;
+  background-image: url(./gambar/scout6.jpeg);
+  background-size: cover;
+}
+
+.reature-2 {
+  grid-area: reature-2;
+  background-image: url(./gambar/WhatsApp\ Image\ 2023-10-04\ at\ 20.04.54\ \(3\)\ -\ Copy.jpeg);
+  background-size: cover;
+}
+
+.reatures .price {
+  font-size: 2em;
+  font-weight: 200;
+}
+
+
+
+/* navigation */
+.menu {
+  order: -1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+
+
+.menu .brend {
+  font-style: 1.3em;
+  color: #333;
+}
+
+.menu ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5px;
+}
+
+.menu a {
+  border-radius: 10px;
+  display: block;
+  background: #000;
+  color: wheat;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  text-transform: uppercase;
+  font-style: 0.9em;
+  border: 2px solid black;
+  transition: all 400ms;
+}
+
+.menu ul li a:hover {
+  color: #000000;
+  background: rgba(130, 121, 121,.0);
+}
+
+
+/* servives */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.service {
+  padding: 15px;
+  background: #fff;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(0,0,0,.3);
+}
+
+.service .icon {
+  font-size: 3em;
+  color: #333;
+}
+
+.service h3 {
+  font-size:1.5em;
+}
+
+.service p {
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 0.8em;
+}
+
+
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 50px;
+  gap: 10px;
+  margin-bottom: 100px;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.gallery h2 {
+  grid-column: 1 /-1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+/* footer */
+footer {
+  height: 50vh;
+  display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap:  10px  190px;
+   background: #fff;
+   border-radius: 5px;
+  }
+  
+  .text {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+  }
+  footer p {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    padding: 10px;
+   font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+}
+
+
+
+/* renponsive breakpoin */
+@media  (max-width:1024px) {
+  .menu {
+    order: inherit;
+    grid-template-columns: 1fr;
+  }
+  .menu .brend {
+    display: none;
+  }
+  .hero > * {
+    display: block;
+  }
+	}
+
+
+@media  (max-width:768px) {
+  .menu {
+    display: none;
+  }
+	}
+
+@media  (max-width:600px) { 
+  body {
+    margin: 12px;
+  }
+
+  header {
+    grid-template-areas: 
+    'hero'
+     'reature-1'
+     'reature-2';
+  }
+
+
+
+ 
+  .text {
+    margin-bottom: 0px;
+  }
+	}
